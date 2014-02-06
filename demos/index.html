@@ -23,6 +23,22 @@ $(function() {
 		selector: '.box'
 	});
 
+	$('.btn1').on('click', function(e){
+		e.preventDefault();
+		equalrowheights.destroy();
+		boxHeader.destroy();
+		boxFooter.destroy();
+		box.destroy();
+	});
+
+	$('.btn2').on('click', function(e){
+		e.preventDefault();
+		equalrowheights.init();
+		boxHeader.init();
+		boxFooter.init();
+		box.init();
+	});
+
 });
 </script>
 <style>
@@ -36,6 +52,7 @@ $(function() {
 		float: left;
 		width:300px;
 		margin-left: 15px;
+		margin-bottom: 10px;
 		background-color: tomato;
 	}
 	.box {
@@ -62,6 +79,11 @@ $(function() {
 		padding: 20px;
 	}
 
+	button {
+		padding: 10px;
+		font-size: 14px;
+	}
+
 </style>
 </head>
 <body>
@@ -69,6 +91,12 @@ $(function() {
 <h1>demo1</h1>
 
 equal row heights.
+
+<hr>
+<button class="btn1">reset heights</button>
+<button class="btn2">set heights (sorry. this command isn't in good running order.)</button>
+<hr>
+
 
 <ul class="list">
 	<li class="js-equalrowheights">
