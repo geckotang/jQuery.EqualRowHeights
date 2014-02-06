@@ -1,6 +1,10 @@
 # jQuery.EqualRowHeights
 
-WIP
+Version: 0.0.0
+
+WIP.
+
+This plugin has some bugs.
 
 ## Usage
 
