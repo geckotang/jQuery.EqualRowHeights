@@ -11,6 +11,16 @@ $(function() {
 
 	var equalrowheights = new $.EqualRowHeights();
 
+	$('.btn1').on('click', function(e){
+		e.preventDefault();
+		equalrowheights.reset();
+	});
+
+	$('.btn2').on('click', function(e){
+		e.preventDefault();
+		equalrowheights.refresh();
+	});
+
 });
 </script>
 <style>
@@ -64,6 +74,11 @@ button {
 
 equal row heights.<br>
 but plugin does'nt work when you used 'float'.
+
+<hr>
+<button class="btn1">reset heights</button>
+<button class="btn2">refresh heights</button>
+<hr>
 
 <ul class="list">
 	<li class="js-equalrowheights">
