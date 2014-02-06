@@ -1,27 +1,29 @@
 (function ($) {
 
   var EqualRowHeights = function(option) {
-    var that = this;
-    that.option = {
-      selector: '.js-equalrowheights',
-      resize: true,
-      onBeforeRefresh: function() {},
-      onAfterRefresh: function() {}
-    };
-    that.init.apply(that, arguments);
-    return that;
+    this.init.apply(this, arguments);
+    return this;
   };
 
 
   EqualRowHeights.prototype.init = function(option) {
     var that = this;
-    that.option = $.extend({}, that.option, option);
-    that.el = $(option.selector);
+
+    that.option = $.extend({}, {
+      selector: '.js-equalrowheights',
+      resize: true,
+      onBeforeRefresh: function() {},
+      onAfterRefresh: function() {}
+    }, option);
+
+    that.el = $(that.option.selector);
     that._eventNS = '.EqualRowHeights'+$.now();
+
     if (that.el.length > 0) {
       that.refresh();
       that._eventify();
     }
+
     return that;
   };
 

@@ -6,27 +6,29 @@
 (function ($) {
 
   var EqualRowHeights = function(option) {
-    var that = this;
-    that.option = {
-      selector: '.js-equalrowheights',
-      resize: true,
-      onBeforeRefresh: function() {},
-      onAfterRefresh: function() {}
-    };
-    that.init.apply(that, arguments);
-    return that;
+    this.init.apply(this, arguments);
+    return this;
   };
 
 
   EqualRowHeights.prototype.init = function(option) {
     var that = this;
-    that.option = $.extend({}, that.option, option);
-    that.el = $(option.selector);
+
+    that.option = $.extend({}, {
+      selector: '.js-equalrowheights',
+      resize: true,
+      onBeforeRefresh: function() {},
+      onAfterRefresh: function() {}
+    }, option);
+
+    that.el = $(that.option.selector);
     that._eventNS = '.EqualRowHeights'+$.now();
+
     if (that.el.length > 0) {
       that.refresh();
       that._eventify();
     }
+
     return that;
   };
 
@@ -71,7 +73,6 @@
     // グループごとに最大の高さを求めて、高さをそろえる
     $.each(rows, function(idx, row) {
       var max_height = Math.max.apply(null, row.heights);
-      console.log(max_height);
       //最大の高さを持つ要素のpaddingの上下をmax_heightから引く
       $.each(row.items, function(idx, item) {
         var $item = $(item);
