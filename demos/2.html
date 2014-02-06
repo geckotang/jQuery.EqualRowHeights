@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="./jquery-1.10.2.min.js"></script>
+<script src="../dest/jquery.equalrowheights.js"></script>
+<script>
+$(function() {
+
+	// using default option
+	var equalrowheights = new $.EqualRowHeights({
+		selector: '.js-equalrowheights',
+		resize: true,
+		onBeforeRefresh: function() {},
+		onAfterRefresh: function() {}
+	});
+
+	// add dummy text to li
+	$('.add').on('click', function(e){
+		e.preventDefault();
+		var id = $(this).attr('data-li') | 0;
+		var elem = $('.list li').eq(id);
+		elem.text(function(){
+			return elem.text() + 'The quick brown fox jumps over the lazy dog.';
+		});
+		equalrowheights.refresh();
+	});
+});
+</script>
+<style>
+	.list {
+		overflow: hidden;
+		list-style: none;
+		padding:0;
+		margin-left: -15px;
+	}
+	.list li {
+		float: left;
+		width:300px;
+		margin-left: 15px;
+		margin-bottom: 15px;
+	}
+
+	button {
+		padding: 10px;
+		font-size: 14px;
+	}
+
+</style>
+</head>
+<body>
+
+<h1>demo2</h1>
+
+if the element's height is changed, call refresh method.
+
+<hr>
+
+<button class="add" data-li="0">Add text to 1st li & Refresh heights</button>
+<button class="add" data-li="1">Add text to 2nd li & Refresh heights</button>
+<button class="add" data-li="2">Add text to 3rd li & Refresh heights</button>
+
+<hr>
+
+<ul class="list">
+	<li class="js-equalrowheights" style="background-color: tomato;">
+		The quick brown fox jumps over the lazy dog.
+		The quick brown fox jumps over the lazy dog.
+	</li>
+	<li class="js-equalrowheights" style="background-color: lime;">
+		The quick brown fox jumps over the lazy dog.
+	</li>
+	<li class="js-equalrowheights" style="background-color: orange;">
+		The quick
+	</li>
+</ul>
+
+
+</body>
+</html>

@@ -1,13 +1,15 @@
 <!doctype html>
-<html class="no-js" lang="ja">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <title></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="./jquery-1.10.2.min.js"></script>
 <script src="../dest/jquery.equalrowheights.js"></script>
 <script>
 $(function() {
+
+	var equalrowheights = new $.EqualRowHeights();
 
 	var boxHeader = new $.EqualRowHeights({
 		selector: '.box-header'
@@ -24,6 +26,18 @@ $(function() {
 });
 </script>
 <style>
+	.list {
+		overflow: hidden;
+		list-style: none;
+		padding:0;
+		margin-left: -15px;
+	}
+	.list li {
+		float: left;
+		width:300px;
+		margin-left: 15px;
+		background-color: tomato;
+	}
 	.box {
 		display: inline-block;
 		width: 200px;
@@ -52,10 +66,22 @@ $(function() {
 </head>
 <body>
 
-<h1>setting same heights for div's w/ jQuery</h1>
+<h1>demo1</h1>
 
+equal row heights.
 
-
+<ul class="list">
+	<li class="js-equalrowheights">
+		The quick brown fox jumps over the lazy dog.
+		The quick brown fox jumps over the lazy dog.
+	</li>
+	<li class="js-equalrowheights">
+		The quick brown fox jumps over the lazy dog.
+	</li>
+	<li class="js-equalrowheights">
+		The quick
+	</li>
+</ul>
 
 
 <div class="box">
