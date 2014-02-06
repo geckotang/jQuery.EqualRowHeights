@@ -8,17 +8,16 @@ See demos.
 
 ## Demos
 
-* ...
+* [demos/index.html](http://geckotang.github.io/jQuery.EqualRowHeights/demos/index.html)
+* [demos/2.html](http://geckotang.github.io/jQuery.EqualRowHeights/demos/2.html)
 
 ## Browsers
 
-* IE6+
-* iOS Safari
-* Android 4
+* Chrome
 
 ## Required
 
-* jQuery 1.9.1 (>= 1.5.1)
+My demos works on jQuery 1.10.2
 
 ## License
 
