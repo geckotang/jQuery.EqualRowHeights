@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="./jquery-1.10.2.min.js"></script>
+<script src="../dest/jquery.equalrowheights.js"></script>
+<script>
+$(function() {
+
+	var equalrowheights = new $.EqualRowHeights();
+
+});
+</script>
+<style>
+.list {
+	overflow: hidden;
+	list-style: none;
+	padding:0;
+	margin-left: -15px;
+}
+.list li {
+	float: left;
+	width:300px;
+	margin-left: 15px;
+	margin-bottom: 10px;
+	background-color: tomato;
+}
+.box {
+	display: inline-block;
+	width: 200px;
+	padding: 10px;
+	margin-right: 10px;
+	vertical-align: top;
+	background-color: gray;
+}
+.box-header {
+	padding: 10px;
+	margin-bottom: 10px;
+	background-color: tomato;
+}
+.box-footer {
+	padding: 10px;
+	background-color: lime;
+}
+.p0 {
+	padding: 0px;
+}
+.p20 {
+	padding: 20px;
+}
+
+button {
+	padding: 10px;
+	font-size: 14px;
+}
+
+</style>
+</head>
+<body>
+
+<h1>demo1</h1>
+
+equal row heights.<br>
+but plugin does'nt work when you used 'float'.
+
+<ul class="list">
+	<li class="js-equalrowheights">
+	The quick brown fox jumps over the lazy dog.
+	The quick brown fox jumps over the lazy dog.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, ipsum placeat animi atque quaerat dicta debitis odit incidunt dolor ipsa quidem unde earum commodi quasi perspiciatis molestias aperiam mollitia quisquam.
+	</li>
+	<li class="js-equalrowheights">
+	The quick brown fox jumps over the lazy dog.
+	</li>
+	<li class="js-equalrowheights">
+	The quick
+	</li>
+	<li class="js-equalrowheights">
+	The quick
+	</li>
+	<li class="js-equalrowheights">
+	The quick brown fox jumps over the lazy dog.
+	</li>
+	<li class="js-equalrowheights">
+	The quick
+	The quick brown fox jumps over the lazy dog.
+	</li>
+	<li class="js-equalrowheights">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, illo, hic, nobis necessitatibus dolore iure amet dolores suscipit dolor sequi dolorum ipsum laboriosam facere eum itaque dignissimos quidem impedit atque.
+	The quick
+	</li>
+</ul>
+
+</body>
+</html>
