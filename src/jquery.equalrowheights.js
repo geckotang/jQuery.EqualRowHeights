@@ -66,7 +66,6 @@
     // グループごとに最大の高さを求めて、高さをそろえる
     $.each(rows, function(idx, row) {
       var max_height = Math.max.apply(null, row.heights);
-      console.log(max_height);
       //最大の高さを持つ要素のpaddingの上下をmax_heightから引く
       $.each(row.items, function(idx, item) {
         var $item = $(item);
